@@ -10,5 +10,6 @@ namespace Inventory.Domains.DTOs
         public DateTime ReleaseDate { get; set; }
         public DateTime? ExpirationDate { get; set; }
         public int RoomId { get; set; }
+        public bool IsInUse { get; set; }
     }
 }

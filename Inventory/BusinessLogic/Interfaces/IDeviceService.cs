@@ -12,5 +12,6 @@ namespace Inventory.BusinessLogic.Interfaces
         Task<bool> CreateDevice(DeviceDTO device);
         Task<bool> UpdateDevice(int id, DeviceDTO device);
         Task<bool> DeleteDevice(int id);
+        Task<bool> UseDevice(int id);
     }
 }

@@ -62,5 +62,15 @@ namespace Inventory.Controllers
             else
                 return NotFound($"Not found device with id {id}");
         }
+
+        [HttpPut("usedevice/{id}")]
+        public async Task<IActionResult> UseDevice(int id)
+        {
+            var used = await _deviceService.UseDevice(id);
+            if (used)
+                return Ok(used);
+            else
+                return BadRequest("Device can not be used");
+        }
     }
 }

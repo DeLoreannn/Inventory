@@ -11,5 +11,6 @@ namespace Inventory.Domains.Entities
         public DateTime? ExpirationDate { get; set; }
         public int RoomId { get; set; }
         public Room Room { get; set; }
+        public bool IsInUse { get; set; }
     }
 }

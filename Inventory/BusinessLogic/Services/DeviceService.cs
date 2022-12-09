@@ -73,5 +73,18 @@ namespace Inventory.BusinessLogic.Services
             }
             return false;
         }
+
+        public async Task<bool> UseDevice(int id)
+        {
+            var device = await _deviceRepository.GetById(id);
+            if (device != null)
+            {
+                device.IsInUse = true;
+                _deviceRepository.Update(device);
+                await _deviceRepository.Save();
+                return true;
+            }
+            return false;
+        }
     }
 }

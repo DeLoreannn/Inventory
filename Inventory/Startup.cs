@@ -42,7 +42,7 @@ namespace Inventory
 
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/build";
+                configuration.RootPath = "clientapp/build";
             });
 
             services.AddAutoMapper(typeof(DeviceProfile), typeof(RoomProfile));
@@ -85,7 +85,7 @@ namespace Inventory
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = "clientapp";
 
                 if (env.IsDevelopment())
                 {
