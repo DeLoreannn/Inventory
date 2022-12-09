@@ -8,5 +8,10 @@ namespace Inventory.DataAccess.Interfaces
     public interface IDeviceRepository
     {
         Task<List<Device>> GetAll();
+        Task<Device> GetById(int id);
+        Task Insert(Device device);
+        void Update(Device deviceToUpdate);
+        void Delete(Device deviceToDelete);
+        Task Save();
     }
 }

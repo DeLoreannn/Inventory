@@ -3,6 +3,7 @@ using Inventory.BusinessLogic.Services;
 using Inventory.DataAccess;
 using Inventory.DataAccess.Interfaces;
 using Inventory.DataAccess.Repositories;
+using Inventory.Domains.MappingProfiles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -44,8 +45,12 @@ namespace Inventory
                 configuration.RootPath = "ClientApp/build";
             });
 
+            services.AddAutoMapper(typeof(DeviceProfile), typeof(RoomProfile));
+
             services.AddScoped<IDeviceRepository, DeviceRepository>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
             services.AddTransient<IDeviceService, DeviceService>();
+            services.AddTransient<IRoomService, RoomService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
